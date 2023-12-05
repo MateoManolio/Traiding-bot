@@ -54,13 +54,6 @@ class MyStrategy(bt.Strategy):
             self.rsi < self.params.rsi_oversold or self.hammer > 0)
         )
 
-        '''(self.short_sma < self.long_sma and self.short_sma[-1] > self.long_sma[-1]) or
-                (self.is_shooting_Star()) or
-                (self.sell_hammer()) or
-                (self.stop_loss())  or
-                (self.is_deadman())
-                '''
-
         # Condiciones para vender
         sell_condition = (
             (self.sma1 < self.sma2 and self.sma1[-1] > self.sma2[-1]) or
